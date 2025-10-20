@@ -57,6 +57,78 @@ section h3 {
   color: #1a237e;
 }
 
+.participants-title {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Make the participants list a normal bulleted list so it's visible */
+
+.participants-list {
+  list-style: none; /* hide default bullets */
+  padding-left: 0;
+  margin: 6px 0;
+}
+
+/* Participant items use flex so we can place a delete icon to the right */
+.participant-item,
+.no-participants {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  background: #eef2ff;
+  color: #1a237e;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: 1px solid rgba(26, 35, 126, 0.06);
+  margin-bottom: 6px; /* spacing between list items */
+}
+
+/* subtle different style for placeholder when no participants */
+.no-participants {
+  background: transparent;
+  color: #777;
+  border: none;
+  font-style: italic;
+}
+
+/* remove the custom dot to let the browser render the list marker */
+.participant-item::before {
+  content: none;
+}
+
+/* Delete button next to participant */
+.delete-participant {
+  background: transparent;
+  border: none;
+  color: #c62828;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px 6px;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.delete-participant:hover {
+  background: rgba(198, 40, 40, 0.08);
+}
+
+/* ensure cards remain tidy on small screens */
+@media (max-width: 480px) {
+  .participants-list {
+    padding-left: 1rem;
+  }
+  .participant-item {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+  }
+}
+
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
