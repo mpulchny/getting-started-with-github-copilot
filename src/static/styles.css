@@ -66,18 +66,20 @@ section h3 {
 }
 
 /* Make the participants list a normal bulleted list so it's visible */
+
 .participants-list {
-  list-style: disc;
-  padding-left: 1.25rem; /* leave room for the bullet */
+  list-style: none; /* hide default bullets */
+  padding-left: 0;
   margin: 6px 0;
-  display: block; /* ensure bullets appear */
 }
 
-/* Show list-item so the marker/bullet is visible; keep a subtle chip-like background */
+/* Participant items use flex so we can place a delete icon to the right */
 .participant-item,
 .no-participants {
-  display: list-item; /* show the bullet */
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   padding: 6px 10px;
   background: #eef2ff;
   color: #1a237e;
@@ -98,6 +100,22 @@ section h3 {
 /* remove the custom dot to let the browser render the list marker */
 .participant-item::before {
   content: none;
+}
+
+/* Delete button next to participant */
+.delete-participant {
+  background: transparent;
+  border: none;
+  color: #c62828;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px 6px;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.delete-participant:hover {
+  background: rgba(198, 40, 40, 0.08);
 }
 
 /* ensure cards remain tidy on small screens */
